@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather App</title>
+    <style>
+        * {
+         margin: 0;
+         font-family: "Bitstream Vera Sans Mono",Monaco, " Courier New",Courier,monospace;
+         box-sizing: border-box;
+        }
+
+        #main {
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        input[type='text'] {
+            padding: 10px;
+            border: 2px solid black;
+            width: 30%;
+            margin-top: 15px;
+        }
+
+        input[type='submit'] {
+            padding: 10px;
+            border: 2px solid black;
+            width: 30%;
+            margin-top: 5px;
+            background: black;
+            color: white;
+
+    </style>
+
+</head>
+<body style="background: url(https://cdn1.vectorstock.com/i/1000x1000/04/55/weather-background-vector-20455.jpg); background-size: 50%;">
+<div id="main">
+    <h1>Find the Weather</h1>
+    <form method="GET">
+        <label for="city"></label>
+        <input type="text" name="city" id="city" placeholder="city...."/><br>
+        <input type="submit" value="submit"/>
+    </form>
+    {% if result %}
+        <h3>{{ result.region }}</h3>
+        <h3>{{ result.dayhour }}</h3>
+        <h3>{{ result.temp_now }}</h3>
+        <h3>{{ result.weather_now }}</h3>
+    {% endif %}
+</div>
+</body>
+</html>
